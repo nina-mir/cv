@@ -1,55 +1,74 @@
 import Image from "next/image";
 
+import Header from '@/components/Header'
+import Experience from "@/components/Experience";
+import Project from "@/components/Project";
+
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div>
+      <Header />
+      <main className="flex flex-col sm:items-start">
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
+        <section className="flex flex-col justify-center items-center container mx-auto max-w-4xl ">
+          <h2 className="self-start px-2 text-2xl text-gray-400">Experience</h2>
+          <Experience
+            title="Lecturer"
+            employer="San Francisco State University"
+            location="San Francisco, CA"
+            startingTime="2024"
+            endingTime="Present"
+            tasks={[
+              "Teaching CSC 317 (Intro to Web Software Development) course.",
+              "Topics covered include Linux OS, HTML5, CSS, JavaScript, Node.js, Express.js, Relational Databases (SQL), Git, authentication & HTTP protocol."
+            ]}
+          />
+          <Experience
+            title="Frontend/UI Developer"
+            employer="Transgender.org"
+            location="San Francisco, CA"
+            startingTime="2023"
+            endingTime="2024"
+            tasks={[
+              "Designed and developed a fully accessible, responsive website serving 100,000 users/month for the Transgender Foundation's advocacy platform.",
+              "Built an internal analytics dashboard that visualized user interactions and geographic data, enabling the team to better understand community needs and optimize content strategy.",
+              "Implemented WCAG 2.1 AA compliance standards and cross-platform compatibility using React, TypeScript, and modern CSS."
+            ]}
+          />
+        </section>
+        <section className="flex flex-col justify-center items-center container mx-auto max-w-4xl ">
+          <h2 className="self-start px-2 text-2xl text-gray-400">Select Projects</h2>
+          <Project
+            title="Visualizing Live Constellation API Data of WindBorne Systems"
+            date="Oct 2025"
+            githubUrl="https://github.com/nina-mir/windborne-job-application"
+            liveUrl="https://nina-mir.github.io/windborne-job-application/"
+            description="Built a full-stack application to visualize WindBorne Systems' sounding balloon fleet trajectories over 24-hour intervals. Developed an automated data pipeline using Node.js, SQLite, and cron jobs on a DigitalOcean cloud server to ingest, process, and archive hourly coordinate data, with deployment via Cloudflare Workers for edge caching. Created interactive visualizations (world map and Sankey chart) using d3.js."
+          />
+          <Project
+            title="Taschen-Doelmetcher.Revisited"
+            date="Aug 2025"
+            githubUrl="https://github.com/nina-mir/taschen-dolmetcher"
+            liveUrl="https://nina-mir.github.io/taschen-dolmetcher/"
+            description="Created a multilingual educational web app using React, TypeScript, and TailwindCSS and Storybook for UI testing & responsive design. Based on a WWII-era German military phrasebook, the app teaches German/Russian/English phrases while educating users about Holocaust history through historical materials and witnesses’ artworks."
+          />
+          <Project
+            title="Responsive Web Edition of The Treblinka Hell by Vasily Grossman"
+            date="March 2025"
+            githubUrl="https://github.com/nina-mir/the-treblinka-hell"
+            liveUrl="http://nina-mir.github.io/the-treblinka-hell/"
+            description="Built a responsive website for Vasily Grossman's 1946 essay The Treblinka Hell using HTML5, CSS, JavaScript, and DOM API. Integrated OpenAI's API to transcribe the original 1946 text, ensuring historical accuracy while delivering enhanced readability and modern UI across all platforms."
+          />
+          <Project
+            title="Circles — Master’s project"
+            date="Summer 2023"
+            githubUrl="https://github.com/nina-mir/classifier_data_viz"
+            reportUrl="https://github.com/nina-mir/classifier_data_viz/blob/main/Classifier_Analyzer_Poster(v1.0).pdf"
+            description="Design and implementation of a full-stack web app (Vue.js, node.js) to visualize the outputs of numerous ML classifier models on a classification problem of up to 1000 classes in a single view. The problem of visual clutter was addressed by using a novel concentric layout. A class filtering feature and an interactive tooltip chart makes analyzing the results easier. The app also computes and renders several important ML metrics for each model. "
+          />
+        </section>
+
+
       </main>
       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
         <a
