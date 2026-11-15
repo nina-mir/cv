@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nina Mir — Software Engineer</title>
+<meta name="description" content="Nina Mir — Software Engineer, MS in Computer Science. Fullstack engineer, SF State lecturer, open-source contributor.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  /* ===== Colors & fonts — change here to restyle the whole page ===== */
+  :root {
+    --teal: #0b6b64;
+    --link: #0f8f84;
+    --ink: #1a1c1d;
+    --body: #3a3d40;
+    --muted: #55585c;
+    --faint: #6e7174;
+    --rule: #dfe2e1;
+    --head: 'Space Grotesk', sans-serif;
+    --sans: 'IBM Plex Sans', sans-serif;
+    --mono: 'IBM Plex Mono', monospace;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #f4f5f4; font-family: var(--sans); color: #232527; }
+  a { color: var(--link); text-decoration: underline; text-decoration-color: rgba(15,143,132,.35); text-underline-offset: 3px; text-decoration-thickness: 1px; }
+  a:hover { color: var(--teal); text-decoration-color: currentColor; }
+  h1, h2, h3, p { margin: 0; }
+
+  main { max-width: 1080px; margin: 0 auto; min-height: 100vh; background: #fff;
+         padding: clamp(28px,6vw,64px) clamp(20px,5.5vw,64px);
+         display: flex; flex-direction: column; gap: clamp(28px,4vw,40px); }
+
+  header { display: flex; flex-direction: column; gap: 6px; padding-bottom: clamp(18px,3vw,24px); border-bottom: 2px solid #17423f; }
+  h1 { font-family: var(--head); font-weight: 700; font-size: clamp(36px,7vw,52px); letter-spacing: -.02em; line-height: 1.05; color: #111; }
+  .role { font-family: var(--head); font-weight: 500; font-size: clamp(16px,2.4vw,19px); color: var(--teal); }
+  .contact { font-family: var(--mono); font-size: 13.5px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 8px 20px; margin-top: 12px; line-height: 1.4; }
+
+  .columns { display: flex; flex-wrap: wrap; gap: 36px clamp(32px,5vw,56px); align-items: flex-start; }
+  .left  { flex: 1 1 280px; min-width: 0; display: flex; flex-direction: column; gap: 32px; }
+  .right { flex: 2 1 440px; min-width: 0; display: flex; flex-direction: column; gap: 36px; }
+
+  section { display: flex; flex-direction: column; gap: 16px; }
+  h2 { font-family: var(--head); font-weight: 600; font-size: 14px; letter-spacing: .12em; text-transform: uppercase; color: var(--teal); }
+  .note { font-size: 13.5px; color: var(--faint); font-style: italic; margin-top: -10px; }
+
+  .summary { font-size: 16px; line-height: 1.6; color: var(--body); text-wrap: pretty; }
+  .summary strong { color: var(--ink); font-weight: 600; }
+  .goal { font-family: var(--head); font-weight: 500; font-style: italic; font-size: 15.5px; line-height: 1.55; color: var(--teal); text-wrap: pretty; }
+
+  .skill { display: flex; flex-direction: column; gap: 3px; }
+  .skill span:first-child { font-family: var(--mono); font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--faint); }
+  .skill span:last-child { font-size: 15px; line-height: 1.5; color: var(--body); }
+
+  .edu { display: flex; flex-direction: column; gap: 2px; }
+  .edu b { font-size: 15.5px; font-weight: 600; color: var(--ink); }
+  .edu span, .small { font-size: 14.5px; line-height: 1.55; color: var(--muted); }
+  .small { color: var(--body); text-wrap: pretty; }
+
+  article { display: flex; flex-direction: column; gap: 4px; }
+  .row { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 2px 12px; }
+  h3 { font-size: 16.5px; font-weight: 600; color: var(--ink); }
+  .tag  { font-family: var(--mono); font-size: 13px; font-weight: 500; color: var(--teal); }
+  .date { font-family: var(--mono); font-size: 13px; color: var(--muted); }
+  .desc { font-size: 14.5px; font-style: italic; color: var(--muted); }
+  .links { display: flex; flex-wrap: wrap; gap: 16px; font-family: var(--mono); font-size: 13.5px; margin: 2px 0; }
+  article p { font-size: 15px; line-height: 1.6; color: var(--body); text-wrap: pretty; }
+  .stack { color: var(--faint); }
+
+  footer { padding-top: 20px; border-top: 1px solid var(--rule); font-size: 14.5px; line-height: 1.55; color: var(--muted); text-wrap: pretty; }
+
+  @media print {
+    body { background: #fff; }
+    main { padding: 0; min-height: 0; }
+  }
+</style>
+</head>
+<body>
+<main>
+
+  <!-- ================= HEADER ================= -->
+  <header>
+    <h1>Nina Mir</h1>
+    <p class="role">Software Engineer · MS in Computer Science</p>
+    <div class="contact">
+      <span>San Francisco, CA</span>
+      <a href="tel:+14154804402">+1 415 480 4402</a>
+      <a href="mailto:ninamirf@gmail.com">ninamirf@gmail.com</a>
+      <a href="https://github.com/nina-mir">github.com/nina-mir</a>
+      <a href="https://linkedin.com/in/nina-ruth-mir">linkedin.com/in/nina-ruth-mir</a>
+    </div>
+  </header>
+
+  <div class="columns">
+
+    <!-- ================= LEFT COLUMN ================= -->
+    <aside class="left">
+
+      <section>
+        <h2>Summary</h2>
+        <p class="summary">Fullstack engineer and SF State web development lecturer building end-to-end LLM tools, browser extensions, and production open-source fixes across <strong>browser-use, JupyterLab, Docling and MDN</strong>.</p>
+        <p class="goal">Seeking a full-stack SWE/FDE role shipping production code alongside senior engineers.</p>
+      </section>
+
+      <section>
+        <h2>Skills</h2>
+        <!-- To add a skill group, copy one <div class="skill"> block -->
+        <div class="skill"><span>Languages</span><span>JavaScript · TypeScript · Python · SQL · HTML · CSS</span></div>
+        <div class="skill"><span>Web</span><span>React · Node.js · Express · Flask · Streamlit · REST APIs · Accessibility</span></div>
+        <div class="skill"><span>Data &amp; AI</span><span>LLM APIs &amp; RAG · Document Processing · D3.js · SQLite</span></div>
+        <div class="skill"><span>Testing &amp; Tools</span><span>pytest · Selenium · Storybook · Git · Linux</span></div>
+      </section>
+
+      <section>
+        <h2>Education &amp; Recognition</h2>
+        <div class="edu"><b>MS in Computer Science</b><span>San Francisco State University — Spring 2023</span></div>
+        <div class="edu"><b>JSNAD — Node.js Application Developer</b><span>The Linux Foundation — February 2025</span></div>
+        <p class="small">Master's project <em>Circles</em>, a Vue.js/Node.js ML-model comparison tool: poster accepted at IEEE VIS 2023; 2nd place, Computational &amp; Mathematical section, SFSU College of Science &amp; Engineering Student Project Showcase.</p>
+      </section>
+
+    </aside>
+
+    <!-- ================= RIGHT COLUMN ================= -->
+    <div class="right">
+
+      <section>
+        <h2>Experience</h2>
+        <!-- To add a job, copy this <article> block -->
+        <article>
+          <div class="row"><h3>Lecturer — San Francisco State University</h3><span class="date">2024–Present</span></div>
+          <p>Teach CSC 317, Intro to Web Software Development: Linux, HTML5, CSS, accessibility, JavaScript, Node.js, Express, SQL, Git, HTTP and authentication.</p>
+        </article>
+      </section>
+
+      <section>
+        <h2>Open-Source Contributions</h2>
+        <p class="note">Each link opens on my code changes</p>
+
+        <!--
+          To add a repo, copy one <article> block below and edit:
+            - repo name in <h3>
+            - merged count in <span class="tag">
+            - description in <p>, with PR links like:
+              <a href="https://github.com/OWNER/REPO/pull/NUMBER/changes">#NUMBER</a>
+          For more PRs in an existing repo, update the count and add the link.
+        -->
+        <article>
+          <div class="row"><h3>browser-use/browser-use</h3><span class="tag">2 merged</span></div>
+          <p>Two LLM-adapter fixes: an API-key leak that sent users’ OpenAI keys to other providers, found by auditing all nine adapters (<a href="https://github.com/browser-use/browser-use/pull/5672/changes">#5672</a>); and a dead Mistral model alias, proven against the live API (<a href="https://github.com/browser-use/browser-use/pull/5673/changes">#5673</a>).</p>
+        </article>
+
+        <article>
+          <div class="row"><h3>docling-project/docling</h3><span class="tag">2 merged</span></div>
+          <p>Two fixes to the Word parser: root-caused why a whole class of documents converted with zero headings, because headings were set as paragraph formatting rather than styles (0 → 6 on the reported file, <a href="https://github.com/docling-project/docling/pull/4129/changes">#4129</a>); and found an unreported bug where numbering inside a text box leaked onto its anchor paragraph, proving the cause by showing exactly one line of output changed (<a href="https://github.com/docling-project/docling/pull/4457/changes">#4457</a>).</p>
+        </article>
+
+        <article>
+          <div class="row"><h3>jupyterlab/jupyterlab</h3><span class="tag">2 merged</span></div>
+          <p>Two fixes to long-open bugs: dark-theme text failing accessibility contrast, raised from 2.43:1 to 8.52:1 (<a href="https://github.com/jupyterlab/jupyterlab/pull/19257/changes">#19257</a>, open since 2023); and a broken close-tab shortcut (<a href="https://github.com/jupyterlab/jupyterlab/pull/19303/changes">#19303</a>, open since 2018).</p>
+        </article>
+
+        <article>
+          <div class="row"><h3>python-visualization/folium</h3><span class="tag">3 merged</span></div>
+          <p>Fixed a tooltip bug open since 2021, where multi-geometry GeoJSON features showed empty tooltips, by testing all eight geometry types to find the real cause and then finding the boundary of my own fix (<a href="https://github.com/python-visualization/folium/pull/2263/changes">#2263</a>); plus follow-ups at the maintainer’s request (<a href="https://github.com/python-visualization/folium/pull/2274/changes">#2274</a>, <a href="https://github.com/python-visualization/folium/pull/2282/changes">#2282</a>).</p>
+        </article>
+
+        <article>
+          <div class="row"><h3>mdn/browser-compat-data</h3><span class="tag">1 merged</span></div>
+          <p>Fixed Firefox compatibility data for FontFaceSet iteration: tested 11 iteration behaviors across Firefox and Chrome to show exactly which three subfeatures are broken and which work correctly, a distinction the original report didn’t make (<a href="https://github.com/mdn/browser-compat-data/pull/30171/changes">#30171</a>).</p>
+        </article>
+      </section>
+
+      <section>
+        <h2>Selected Projects</h2>
+
+        <!--
+          To add a project, copy one <article> block below and edit:
+            name (<h3>), year, short description, links, paragraph, and tech stack.
+        -->
+        <article>
+          <div class="row"><h3>Save Image 'n Context</h3><span class="date">2026</span></div>
+          <span class="desc">Chrome extension, published</span>
+          <div class="links">
+            <a href="https://chromewebstore.google.com/detail/save-image-n-context/ikfnmdlkdmmjfoinfgmkccloejgmhmil">Web Store ↗</a>
+            <a href="https://github.com/nina-mir/save-image-n-context">source ↗</a>
+          </div>
+          <p>Logs a citation record for any downloaded image — source metadata, surrounding page context, fallbacks on restricted pages. Service worker plus on-demand content scripts with no background access to browsing data, duplicate detection, retry logic, and JSON/CSV export hardened against spreadsheet formula injection.</p>
+        </article>
+
+        <article>
+          <div class="row"><h3>Patient Bot</h3><span class="date">2026</span></div>
+          <span class="desc">Automated QA harness for a live voice AI agent</span>
+          <div class="links">
+            <a href="https://nina-mir.github.io/patient-bot/">Report ↗</a>
+            <a href="https://github.com/nina-mir/patient-bot">source ↗</a>
+          </div>
+          <p>Python system that places real outbound calls to a medical scheduling agent, plays a scripted patient persona across 14 scenarios, and produces recordings, dual transcriptions, and defect analysis. Found 7 defects, including a scheduler reporting no availability while offering slots minutes later. <span class="stack">Python, Retell telephony, Whisper, Gemini API.</span></p>
+        </article>
+
+        <article>
+          <div class="row"><h3>Kopani</h3><span class="date">2026</span></div>
+          <span class="desc">Full-stack discovery platform for independent literature</span>
+          <div class="links">
+            <a href="https://kopani.netlify.app/">Online ↗</a>
+            <a href="https://github.com/nina-mir/kopani">source ↗</a>
+          </div>
+          <p>MVP built solo and pitched at the Perplexity AI Billion Dollar Pitch competition. Indexes work from six independent journals without republishing copyrighted text; each source needed its own scraper, then LLM-assisted workflows normalized everything into structured, searchable records. <span class="stack">Astro, TailwindCSS, SQLite, Gemini API, Netlify.</span></p>
+        </article>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- ================= FOOTER ================= -->
+  <footer>More projects — live data pipelines, a natural-language-to-code geospatial chatbot, D3 dashboards — and more open-source contributions at <a href="https://github.com/nina-mir">github.com/nina-mir</a>.</footer>
+
+</main>
+</body>
+</html>
